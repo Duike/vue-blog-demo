@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contain">
     <el-form
       :model="ruleForm2"
       :rules="rules2"
@@ -8,6 +8,7 @@
       label-width="0px"
       class="demo-ruleForm login-container"
     >
+      <h3 class="title">系统登录</h3>
       <el-form-item prop="username">
         <el-input
           class="username"
@@ -35,20 +36,23 @@
         </el-input>
       </el-form-item>
       <el-checkbox v-model="checked" checked class="remember">记住用户名</el-checkbox>
-      <div @click="registered" style="float: right;cursor: pointer;position: relative;">
-        <span style="color: #8165FF;">用户注册</span>
-      </div>
       <el-form-item style="width:100%;">
 
         <el-button
           type
-          style="width:100%;background-color:#8165FF;color:#FFFFFF;"
+          style="width:100%;background-color:#409EFF;color:#FFFFFF;"
           @click="handleSubmit2"
           :loading="logining"
         >登录
         </el-button>
         <!--<el-button @click.native.prevent="handleReset2">重置</el-button>-->
       </el-form-item>
+      <div @click="forgotPassword" style="float: left;cursor: pointer;position: relative;">
+        <span style="color: #409EFF;">忘记密码</span>
+      </div>
+      <div @click="registered" style="float: right;cursor: pointer;position: relative;">
+        <span style="color: #409EFF;">用户注册</span>
+      </div>
     </el-form>
   </div>
 </template>
@@ -85,9 +89,13 @@
       }
     },
     methods: {
+      //忘记密码
+      forgotPassword(){
+        alert('暂无此功能！')
+      },
       //用户注册
       registered() {
-        console.log('用户注册');
+        alert('暂无此功能！')
       },
       handleSubmit2() {
         let _this = this;
@@ -156,6 +164,31 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="less" scoped>
+  .login-container {
+    /*background-image: url("../assets/background.jpg");*/
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-clip: padding-box;
+    width: 350px;
+    margin: 15px auto;
+    padding: 35px 35px 15px 35px;
+    opacity:0.9 !important;
+    box-shadow:0px 3px 8px 0px rgba(129, 255, 101, 0.35) !important;
+    .title {
+      margin: 0px auto 40px auto;
+      text-align: center;
+      color: #505458;
+    }
+    .remember {
+      float: left;
+      margin-bottom: 10px;
+    }
+    background:rgba(255,255,255,0.35)!important;
+  }
 </style>
