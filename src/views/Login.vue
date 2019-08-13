@@ -117,7 +117,7 @@
               },
               data: JSON.stringify(this.ruleForm2)
             }).then(res => {
-              console.log(res);
+              //console.log(res);
               if (res.data.status == "success") {
                 this.$message({
                   message: res.data.message,
