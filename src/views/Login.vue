@@ -104,9 +104,7 @@
             this.logining = true;
 
             //加密
-            this.ruleForm2.password = aes.encrypt(this.ruleForm2.password, "SZ[SAFE]dqaq.123")
-              .replace(/%/g, "%25")
-              .replace(/[+]/g, "%2B");
+            this.ruleForm2.password = aes.encrypt(this.ruleForm2.password, "SZ[SAFE]dqaq.123");
 
             let _this = this;
             this.$axios({
