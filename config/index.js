@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/xqd': {
-        target: 'http://localhost:8080',//设置你调用的接口域名和端口号 别忘了加http
+        target: 'http://localhost:8080/duike',//设置你调用的接口域名和端口号 别忘了加http
         changeOrigin: true,
         pathRewrite: {
           '^/xqd': ''
@@ -28,7 +28,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */
