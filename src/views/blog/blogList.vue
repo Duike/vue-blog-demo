@@ -24,13 +24,20 @@
       getDepartmentList() {
         let _this = this;
         //请求参数
-        let params = {};
+        let params = {
+          id:1,
+          name:"duike"
+        };
         this.$axios({
-          url: 'xqd/department/findTemplateList',
+          url: 'xqd/department/test111',
           method: 'post',//请求的方式
           headers: {
             'Content-Type': 'application/json; charset=UTF-8',
             'token': sessionStorage.getItem("Token")
+          },
+          params:{
+            current:20,
+            size:30
           },
           data: JSON.stringify(params)
         }).then(res => {
@@ -91,6 +98,7 @@
       } else {
         alert('当前浏览器 Not support websocket')
       }
+      this.getDepartmentList();
     },
     beforeDestroy() {
       this.onbeforeunload()
